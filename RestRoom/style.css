@@ -1,0 +1,331 @@
+body,html{
+    overflow: hidden;
+    min-height: 100%;
+    min-width: 100%;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    font-weight: 300;
+    user-select: none;
+  }
+  #app{
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  #soap {
+    display: none;
+    width: 100px;
+    height: auto;
+    z-index: 2;
+    left: 50%;
+    bottom: 3%;
+    position: absolute;
+    transform: translateX(-50%);
+    cursor: pointer;
+  }
+  #message{
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: -10%;
+    transform: translateX(-50%);
+    z-index: 2;
+    font-size: 30px;
+    text-transform: uppercase;
+    background-color: white;
+    padding: 1% 2%;
+    border-radius: 15px;
+    border: solid black 2px;
+    transition: top 1000ms ease-in-out;
+  }
+  #app canvas {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    background: transparent;
+  }
+.blackScreen{
+  display: none;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0%;
+  top: 0%;
+  background-color: rgb(201, 132, 247);
+  opacity: 0;
+  z-index: 10;
+}
+#MKViewer{
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+  /* background: url("img/background-4k.webp") repeat;
+  background-size: cover; */
+    /* background: -moz-linear-gradient(0deg, rgb(255, 255, 255) 0%, #092d47 100%);
+    background: -webkit-linear-gradient(0deg, rgb(255, 255, 255) 0%, rgba(9,45,71,1) 100%);
+    background: linear-gradient(0deg, rgb(255, 255, 255) 0%, rgba(9,45,71,1) 100%); */
+}
+/* #MKViewer canvas{
+  z-index: 20;
+} */
+#loader_spiner{
+  position: relative;
+    width: 100%;
+    height: 100%;
+}
+#loader_spiner img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.leftArrw{
+  display: none;
+  width: 5vw;
+  height: 100vh;
+  position: absolute;
+  background-color: rgb(0, 0, 0);
+  left: 0%;
+  top: 0%;
+  z-index: 1;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.RightArrw{
+  display: none;
+  width: 5vw;
+  height: 100vh;
+  position: absolute;
+  background-color: rgb(0, 0, 0);
+  right: 0%;
+  top: 0%;
+  z-index: 1;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+svg{
+  width: 50%;
+  height: auto;
+  fill: white;
+}
+nav{
+  display: flex;
+  position: absolute;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1% 2%;
+  z-index: 100;
+  background-color: #0000008c;
+}
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: 900;
+  font-size: 20px;
+  padding: 0 0.2rem;
+  font-family: "Roboto", sans-serif;
+  cursor: pointer;
+  padding: 0px 10px;
+}
+.titles{
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  align-items: center;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 20%;
+}
+.twoabout{
+  font-weight: 800;
+  font-size: 30px;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  /* word-spacing: 10px; */
+}
+.left{
+  display: flex;
+  align-items: center;
+}
+.right{
+  padding-right: 5%;
+  display: flex;
+  align-items: center;
+}
+.center {
+  position: relative;
+}
+.center img{
+  position: relative;
+  height: auto;
+  width: 60px;
+}
+.smlBubbles{
+  position: absolute;
+  left: 0%;
+  top:0;
+  border-radius: 5em;
+   box-shadow: 1px 1px 7px hsla(0, 0, 80%, 0.7);
+   height: 4em;
+   width: 4em;
+   background-image: 
+      radial-gradient(ellipse at 75% 70%, 
+         hsla(0, 0%, 90%, 0.8), 
+         hsla(180, 76%, 80%, 0.15) 9%, 
+         hsla(202, 75%, 78%, 0.1) 90%,
+         hsla(192, 77%, 76%, 0.1)
+      ),
+      radial-gradient(ellipse at 25% 30%, 
+         hsla(0, 0%, 90%, 0.8), 
+         hsla(0, 0%, 60%, 0.2) 7%, 
+         hsla(0, 0%, 10%, 0.1) 90%,
+         hsla(0, 0%, 10%, 0.1)
+      );
+}
+.smlBubbles1{left: -12%;top: -28%;}
+.smlBubbles2{left: 55%;top: -22%;height: 3em;width: 3em;}
+.smlBubbles3{left: 82%;top: 55%;height: 2.5em;width: 2.5em;}
+.smlBubbles4{left: -29%;
+  top: 22%;
+  height: 3.5em;
+  width: 3.5em;}
+.smlBubbles5{    left: 66%;
+  top: -29%;
+  height: 4.5em;
+  width: 4.5em;}
+.smlBubbles6{left: 72%;
+  top: 69%;
+  height: 3em;
+  width: 3em}
+.bubble{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 50%;
+  bottom: -25em;
+  z-index: 12;
+  border-radius: 10em;
+   box-shadow: 1px 1px 7px hsla(0, 0, 80%, 0.7);
+   height: 14em;
+   width: 14em;
+   background-image: 
+      radial-gradient(ellipse at 75% 70%, 
+         hsla(0, 0%, 90%, 0.8), 
+         hsla(0, 0%, 90%, 0.15) 9%, 
+         hsla(0, 0%, 10%, 0.1) 90%,
+         hsla(0, 0%, 10%, 0.1)
+      ),
+      radial-gradient(ellipse at 25% 30%, 
+         hsla(0, 0%, 90%, 0.8), 
+         hsla(0, 0%, 60%, 0.2) 7%, 
+         hsla(0, 0%, 10%, 0.1) 90%,
+         hsla(0, 0%, 10%, 0.1)
+      );
+      
+}
+.animate-balckScreen {
+  animation-duration: 4s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards; /* This keeps the final animation state */
+  animation-name: blackScreen;
+}
+.animate-bubble1 {
+  animation-duration: 4s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards; /* This keeps the final animation state */
+  animation-name: move-bubble1;
+}
+.animate-bubble2 {
+  animation-duration: 4s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards; /* This keeps the final animation state */
+  animation-name: move-bubble2;
+}
+.animate-bubble3 {
+  animation-duration: 4s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards; /* This keeps the final animation state */
+  animation-name: move-bubble3;
+}
+.animate-bubble4 {
+  animation-duration: 4s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards; /* This keeps the final animation state */
+  animation-name: move-bubble4;
+}
+.bubble1{
+  left:calc(50% + 2em);
+}
+.bubble2{
+  left: calc(50% + 16em);
+    width: 15em;
+    height: 15em;
+}
+.bubble3{
+  left:calc(50% - 13em);
+}
+.bubble4{
+  left: calc(50% - 24em);
+}
+
+@keyframes move-bubble1 {
+  0% {
+      transform: translateY(0)  scale(1);
+      opacity: 1;
+  }
+  100% {
+      transform: translateY(-80vh) scale(0.72);
+      opacity: 0.8;
+  }
+}
+@keyframes move-bubble2 {
+  0% {
+      transform: translateY(0)  scale(1);
+      opacity: 1;
+  }
+  100% {
+      transform: translateY(-55vh) scale(0.72);
+      opacity: 0.8;
+  }
+}
+@keyframes move-bubble3 {
+  0% {
+      transform: translateY(0)  scale(1);
+      opacity: 1;
+  }
+  100% {
+      transform: translateY(-65vh) scale(0.72);
+      opacity: 0.8;
+  }
+}
+@keyframes move-bubble4 {
+  0% {
+      transform: translateY(0)  scale(1);
+      opacity: 1;
+  }
+  100% {
+      transform: translateY(-50vh) scale(0.72);
+      opacity: 0.8;
+  }
+}
+@media only screen and (max-width: 600px) {
+  nav a {
+    font-size:15px ;
+  }
+  .twoabout{
+    font-size: 17px;
+    width: 100%;
+    white-space: nowrap;
+  }
+}
