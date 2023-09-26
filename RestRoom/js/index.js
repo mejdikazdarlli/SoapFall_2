@@ -60,12 +60,16 @@ function onSoapDropped(event) {
         let Saopdroping = Viewer.scene.getObjectByName("Saopdroping");
         let SaopinHand = Viewer.scene.getObjectByName("dropedSaop");
         let blackMen = Viewer.scene.getObjectByName("HG_Jack_RIGIFY");
+        let whiteMen = Viewer.scene.getObjectByName("HG_MAN");
 
         const blackMeninitialPosition =blackMen.position.clone()
-        const blackMeninitialPositionTarget = new THREE.Vector3(1,0,0)
+        const blackMeninitialPositionTarget = new THREE.Vector3(0.5,0,0)
 
         const blackMeninitialRotation =blackMen.rotation.clone()
         const blackMeninitialRotationTarget = new THREE.Vector3(0,2.5,0)
+
+        const whiteMeninitialPosition =whiteMen.position.clone()
+        const whiteMeninitialPositionTarget = new THREE.Vector3(1.0,0,0)
         
         // Set the initial opacity to 0
         Saopdroping.material.opacity = 0;
@@ -94,7 +98,6 @@ function onSoapDropped(event) {
                 Viewer.orbit.enabled= false
                 let multiplVal
                 if(screenWidth<300){multiplVal = 2.5}else if(screenWidth<900){multiplVal = 2} else{multiplVal=1}
-                console.log(multiplVal)
                 new TWEEN.Tween({ fov: initialcameraFov })
                 .to({ fov: initialcameraFov/(scaleFactor*multiplVal) }, 2000)
                 .easing(TWEEN.Easing.Quadratic.InOut)
@@ -125,11 +128,18 @@ function onSoapDropped(event) {
                 });
                 })
                 .onComplete(()=>{
+                    _('text').style.display = "block"
                     //Viewer.orbit.enabled= true
                     new TWEEN.Tween(blackMeninitialPosition)
                         .to(blackMeninitialPositionTarget, 1500)
                         .easing(TWEEN.Easing.Quadratic.InOut)
                         .onUpdate(() => {blackMen.position.copy(blackMeninitialPosition)})
+                        .start();
+
+                    new TWEEN.Tween(whiteMeninitialPosition)
+                        .to(whiteMeninitialPositionTarget, 1500)
+                        .easing(TWEEN.Easing.Quadratic.InOut)
+                        .onUpdate(() => {whiteMen.position.copy(whiteMeninitialPosition)})
                         .start();
 
                     new TWEEN.Tween(blackMeninitialRotation)

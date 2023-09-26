@@ -328,9 +328,29 @@ nav a {
   left: 0px;
   bottom: 0px;
   z-index: 1;
-
+}
+.bubble img {
+  width: 75px;
+  height: auto;
+  cursor: pointer;
+}
+#text{
+  display: none;
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: fit-content;
+  color: red;
+  margin-top: 2%;
+  text-align: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 30px;
+  font-weight: 900;
 }
 @media only screen and (max-width: 900px) {
+  #text{
+    margin-top: 40%;
+  }
   .bubbleContainer{
     bottom: 100px;
   }
@@ -349,6 +369,12 @@ nav a {
 }
 }
 @media only screen and (max-width: 600px) {
+  #text{
+    margin-top: 10%;
+  }
+  #message{
+    font-size: 22px;
+  }
   .bubbleContainer{
     bottom: 100px;
   }
@@ -367,6 +393,9 @@ nav a {
 }
 }
 @media only screen and (max-width: 425px) {
+  #message{
+    font-size: 20px;
+  }
   .bubbleContainer{
     bottom: 100px;
   }
@@ -380,7 +409,7 @@ nav a {
   }
   .bubble2 {
     left: calc(50% + 4.5em);
-    bottom: -19em;
+    bottom: -25em;
   }
   .bubble3{
     left:calc(50% - 10em);
@@ -392,6 +421,9 @@ nav a {
 }
 }
 @media only screen and (max-width: 380px) {
+  #message{
+    font-size: 18px;
+  }
   .bubbleContainer{
     bottom: 100px;
   }
