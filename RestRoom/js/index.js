@@ -52,6 +52,9 @@ function updateCameraFOV(value,camera) {
 }
 let soapDropped = false;
 function onSoapDropped(event) {
+    var screenWidth = window.innerWidth;
+    var referenceScreenWidth = 1080;
+    var scaleFactor = screenWidth / referenceScreenWidth;
         let SaopOnFloor = Viewer.scene.getObjectByName("SaopOnFloor");
         let SaopOnFloorCAM = Viewer.scene.getObjectByName("SaopOnFloorCAM");
         let Saopdroping = Viewer.scene.getObjectByName("Saopdroping");
@@ -89,9 +92,11 @@ function onSoapDropped(event) {
             .onUpdate(() => {camera.position.copy(initialCameraPosition);})
             .onComplete(()=>{
                 Viewer.orbit.enabled= false
-
+                let multiplVal
+                if(screenWidth<300){multiplVal = 2.5}else if(screenWidth<900){multiplVal = 2} else{multiplVal=1}
+                console.log(multiplVal)
                 new TWEEN.Tween({ fov: initialcameraFov })
-                .to({ fov: 30 }, 2000)
+                .to({ fov: initialcameraFov/(scaleFactor*multiplVal) }, 2000)
                 .easing(TWEEN.Easing.Quadratic.InOut)
                 .onUpdate((obj) => {
                     updateCameraFOV(obj.fov,camera); // Update the camera FOV during the animation
@@ -110,7 +115,6 @@ function onSoapDropped(event) {
                         let action = mixer.clipAction(clip);
                         action.stop()
                         if (action._clip.name === "SaopdropingAction" && !soapDropped) {
-                            console.log(action)
                             action.reset();
                             action.clampWhenFinished = true;
                             action.timeScale = 1;
@@ -151,6 +155,11 @@ function onSoapDropped(event) {
                 new TWEEN.Tween(initialCameraLookAt)
                 .to(cameraUP_target, 2000)
                 .easing(TWEEN.Easing.Quadratic.InOut)
+                .onStart(()=>{
+                        if(screenWidth<900){
+                            Saopdroping.scale.set(scaleFactor, scaleFactor, scaleFactor);
+                        }
+                })
                 .onUpdate(() => {
                     camera.lookAt(initialCameraLookAt);
                 })

@@ -320,17 +320,94 @@ nav a {
       opacity: 0.8;
   }
 }
+.bubbleContainer{
+  display: flex;
+  position: absolute;
+  width: 100vw;
+  height: fit-content;
+  left: 0px;
+  bottom: 0px;
+  z-index: 1;
+
+}
 @media only screen and (max-width: 900px) {
-  nav a {
-    font-size:15px ;
+  .bubbleContainer{
+    bottom: 100px;
   }
-  .twoabout{
-    font-size: 17px;
-    width: 100%;
-    white-space: nowrap;
+  .bubble{
+    width: 10em;
+    height: 10em;
   }
-  #message{
-    font-size: 20px;
-    width: fit-content;
+  .bubble2 {
+    left: calc(50% + 10em);
   }
+  .bubble3{
+    left:calc(50% - 10em);
+  }
+  .bubble4 {
+    left: calc(50% - 21em);
+}
+}
+@media only screen and (max-width: 600px) {
+  .bubbleContainer{
+    bottom: 100px;
+  }
+  .bubble{
+    width: 8.5em;
+    height: 8.5em;
+  }
+  .bubble2 {
+    left: calc(50% + 6em);
+  }
+  .bubble3{
+    left:calc(50% - 10em);
+  }
+  .bubble4 {
+    left: calc(50% - 18em);
+}
+}
+@media only screen and (max-width: 425px) {
+  .bubbleContainer{
+    bottom: 100px;
+  }
+  .bubble{
+    width: 6.5em;
+    height: 6.5em;
+  }
+  .bubble1 {
+    left:calc(50% + 2em);
+    bottom: -21em;
+  }
+  .bubble2 {
+    left: calc(50% + 4.5em);
+    bottom: -19em;
+  }
+  .bubble3{
+    left:calc(50% - 10em);
+    bottom: -19em;
+  }
+  .bubble4 {
+    left: calc(50% - 5em);
+    bottom: -18em;
+}
+}
+@media only screen and (max-width: 380px) {
+  .bubbleContainer{
+    bottom: 100px;
+  }
+  .bubble{
+    width: 6.5em;
+    height: 6.5em;
+  }
+  .bubble2 {
+    left: calc(50% + 3.5em);
+  }
+  .bubble3{
+    left:calc(50% - 8em);
+    bottom: -17em;
+  }
+  .bubble4 {
+    left: calc(50% - 5em);
+    bottom: -17em;
+}
 }

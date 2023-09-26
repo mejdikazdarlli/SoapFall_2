@@ -84,7 +84,7 @@ function onDocumentMouseclick(event) {
                         blackScreen.style.display = "block";
                     })
                     .onComplete(() => {
-                        window.location.href = "RestRoom/index.html";
+                        window.location.href = window.location.hostname + "RestRoom/index.html";
                     })
                     .start();
             }
