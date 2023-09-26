@@ -19,7 +19,7 @@ body,html{
     height: auto;
     z-index: 2;
     left: 50%;
-    bottom: 3%;
+    bottom: 6%;
     position: absolute;
     transform: translateX(-50%);
     cursor: pointer;
