@@ -408,15 +408,15 @@ nav a {
     bottom: -21em;
   }
   .bubble2 {
-    left: calc(50% + 4.5em);
+    left: calc(50% + 50px);
     bottom: -25em;
   }
   .bubble3{
-    left:calc(50% - 10em);
+    left:calc(50% - 150px);
     bottom: -19em;
   }
   .bubble4 {
-    left: calc(50% - 5em);
+    left: calc(50% - 60px);
     bottom: -18em;
 }
 }
