@@ -145,7 +145,7 @@ loader.setDRACOLoader(loaderDRACO);
 
 export async function LoadModel(model, _thisScene) {
     _("loader_spiner").style.display = "block";
-
+    _("next").style.display = "none";
     return loader.load('asset/' + model, function (object) {
         var SceneGLB = object.scene;
         SceneGLB.name = String(model)
@@ -180,9 +180,11 @@ export function FNmanager() {
     var manager = new THREE.LoadingManager();
     manager.onLoad = async function () { //console.log("loaded");
     _("loader_spiner").style.display = "none";
+    _("next").style.display = "block";
 };
     manager.onProgress = function (url, itemsLoaded, itemsTotal) {
         _("loader_spiner").style.display = "block";
+        _("next").style.display = "none";
         // let percentComplete = itemsLoaded / itemsTotal * 100;
         // _("loadertxt").innerText =Math.round( percentComplete, 2 )+'%';
         // console.log("chargement terminer : " + url, "--->", itemsLoaded, "/", itemsTotal);

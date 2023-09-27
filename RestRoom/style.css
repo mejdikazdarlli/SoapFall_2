@@ -359,13 +359,14 @@ nav a {
     height: 10em;
   }
   .bubble2 {
-    left: calc(50% + 10em);
+    left: calc(50% + 5em);
   }
   .bubble3{
-    left:calc(50% - 10em);
+    left:calc(50% - 5em);
   }
   .bubble4 {
-    left: calc(50% - 21em);
+    left: calc(50% - 12em);
+    bottom: -23em;
 }
 }
 @media only screen and (max-width: 600px) {
@@ -383,13 +384,13 @@ nav a {
     height: 8.5em;
   }
   .bubble2 {
-    left: calc(50% + 6em);
+    left: calc(50% + 3em);
   }
   .bubble3{
-    left:calc(50% - 10em);
+    left:calc(50% - 9em);
   }
   .bubble4 {
-    left: calc(50% - 18em);
+    left: calc(50% - 12em);
 }
 }
 @media only screen and (max-width: 425px) {
